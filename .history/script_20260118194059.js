@@ -17,22 +17,15 @@ setTimeout(() => {
 console.log("End");
 
 
-// const fs = require("fs");
-// fs.readFile("file.txt", "utf8", (err, data) => {
-//     console.log(data);
-// });
+const fs = require("fs");
+fs.readFile("file.txt", "utf8", (err, data) => {
+    console.log(data);
+});
 
-// console.log("Done");
+console.log("Done");
 
 
 const cow=require('cowsay')
 console.log(cow.say({
-    text:'Hello Node Js',
-    e:"oO",
-    T:'UU'
-}));
-console.log(cow.think({
-    text: 'thinking how learning node js',
-    e: "oO",
-    T: 'UU'
+    text:''
 }));

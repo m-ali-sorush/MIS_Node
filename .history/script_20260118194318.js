@@ -29,10 +29,5 @@ const cow=require('cowsay')
 console.log(cow.say({
     text:'Hello Node Js',
     e:"oO",
-    T:'UU'
-}));
-console.log(cow.think({
-    text: 'thinking how learning node js',
-    e: "oO",
-    T: 'UU'
+    T:'UUU'
 }));

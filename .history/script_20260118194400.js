@@ -32,7 +32,7 @@ console.log(cow.say({
     T:'UU'
 }));
 console.log(cow.think({
-    text: 'thinking how learning node js',
+    text: 'Hello Node Js',
     e: "oO",
     T: 'UU'
 }));

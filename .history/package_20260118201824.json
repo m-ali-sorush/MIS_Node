@@ -37,7 +37,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node script.js && GoodeBy!!"
+    "start":"node script.js && G"
   },
   "repository": {
     "type": "git",
