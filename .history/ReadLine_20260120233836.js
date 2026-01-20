@@ -25,13 +25,7 @@ rl.on("line",(input)=>{
         console.log("Please Enter a valid Name");
         return;
     }
-    if(input=="exit" || input=="Exit"){
-        console.log("they are you friends ["+Names+" ]\n Good By");
-        rl.close();
-
-        return;
-    }
-    Names.push(input)
+    if(input=="exit" || input)
     console.log(`Enter The name of your friends`);
     console.log(`${input} added to the list`);
     console.log(`Your have ${Names.length} Friends Now`);

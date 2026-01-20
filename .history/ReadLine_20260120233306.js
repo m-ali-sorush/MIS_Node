@@ -21,20 +21,10 @@ rl.question("Enter the first Number",(num1)=>{
 })
 let Names=[];
 rl.on("line",(input)=>{
-    if(input.length<3){
-        console.log("Please Enter a valid Name");
-        return;
-    }
-    if(input=="exit" || input=="Exit"){
-        console.log("they are you friends ["+Names+" ]\n Good By");
-        rl.close();
-
-        return;
-    }
-    Names.push(input)
+    Names.push(input);
     console.log(`Enter The name of your friends`);
     console.log(`${input} added to the list`);
-    console.log(`Your have ${Names.length} Friends Now`);
+    console.log(`${input} added to the list`);
     if(Names.length>=5){
         console.log("Your friends finished they your friends [ "+Names+" ]");
         rl.close()

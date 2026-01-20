@@ -26,9 +26,8 @@ rl.on("line",(input)=>{
         return;
     }
     if(input=="exit" || input=="Exit"){
-        console.log("they are you friends ["+Names+" ]\n Good By");
         rl.close();
-
+        
         return;
     }
     Names.push(input)
