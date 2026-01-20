@@ -14,17 +14,8 @@ rl.question("Enter the first Number",(num1)=>{
     rl.question("Enter the second Number",(num2)=>{
         num2=Number(num2)
         console.log(`The sumation of these numbers are ${num1+num2}`);
-        // rl.close();
+        rl.close();
     })
    
 })
-let Names=[];
-rl.on("line",(input)=>{
-    Names.push(input);
-    console.log(`Enter The name of your friends`);
-    console.log(`there are ${Names.length} person`);
-    if(Names.length>=5){
-        console.log("Your friends finished they your friends"+Names);
-        rl.close()
-    }
-})
+rl.question("")

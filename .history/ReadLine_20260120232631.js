@@ -24,7 +24,7 @@ rl.on("line",(input)=>{
     console.log(`Enter The name of your friends`);
     console.log(`there are ${Names.length} person`);
     if(Names.length>=5){
-        console.log("Your friends finished they your friends"+Names);
+        console.log("Your friends finished they your friends");
         rl.close()
     }
 })
