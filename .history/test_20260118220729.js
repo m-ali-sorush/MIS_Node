@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+
+console.log();('this code run type my-test-command');

@@ -22,7 +22,6 @@
     "p-locate": "^4.1.0",
     "p-try": "^2.2.0",
     "path-exists": "^4.0.0",
-    "readline": "^1.3.0",
     "require-directory": "^2.1.1",
     "require-main-filename": "^2.0.0",
     "set-blocking": "^2.0.0",
@@ -35,12 +34,13 @@
     "yargs": "^15.4.1",
     "yargs-parser": "^18.1.3"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node script.js && GoodeBy!!"
+    "start":"node script.js && GoodeBy!!"
   },
   "bin": {
-    "my-test-command": "test.js"
+    "my-test-command":"node "
   },
   "repository": {
     "type": "git",
