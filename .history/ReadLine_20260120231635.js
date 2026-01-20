@@ -12,9 +12,8 @@ const rl=readLine.createInterface({
 rl.question("Enter the first Number",(num1)=>{
     num1=Number(num1);
     rl.question("Enter the second Number",(num2)=>{
-        num2=Number(num2)
+        num2=Num
         console.log(`The sumation of these numbers are ${num1+num2}`);
-        rl.close();
     })
    
 })
