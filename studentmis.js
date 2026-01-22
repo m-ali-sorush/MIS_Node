@@ -23,6 +23,12 @@ function handleOptions(input){
         case "1":
             addStudent();
             break;
+        case "2":
+            viewStudents();
+            break;
+        case "3":
+            deleteStudent();
+            break;
         case "4":
             console.log("===== GoodBye ====");
             rl.close()
@@ -34,20 +40,70 @@ function handleOptions(input){
 }
 
 function addStudent(){
-    rl.question("Enter student Name",(name)=>{
-        rl.question("Enter studnt id",(id)=>{
-            rl.question("Enter student mark",(mark)=>{
-                const student={
+    rl.question("Enter student Name > ",(name)=>{
+        rl.question("Enter studnt id > ",(id)=>{
+            if(students[id]){
+                console.log("❌ Student with this ID already exists!");
+                showMenu();
+            }
+            rl.question("Enter student mark > ",(mark)=>{
+                students[id]={
                     id:Number(id),
                     name:name,
-                    score:Number(mark)
+                    mark:Number(mark)
                 }
+                // students.push(student);
                 console.log(`${name} added successfully in the CLI SYSTEM`);
+                rl.question("Do you want add next student? (yes/no) ",(answer)=>{
+                    if(answer.toLowerCase==="yes" || answer==="y"){
+                        addStudent();
+                    }else{
+                        showMenu();
+                    }
+                })
 
             })
         })
     })
 }
 function viewStudents(){
-    
+    if(Object.keys(students).length===0){
+        console.log("📭 No students available.");
+        showMenu();
+    }else {
+        console.log("______________________________________");
+        console.log("====== Students List =====");
+        let count=1;
+        for (const id in students){
+            const student=students[id];
+            console.log(`${count}. ID: ${student.id}, Name: ${student.name}, Score:${student.mark}`);
+            count++;
+        }
+        console.log("______________________________________");       
+    }
+    showMenu();
+}
+function deleteStudent(){
+    if(Object.keys(students).length===0){
+        console.log("No student for delete");
+        showMenu();
+    }else{
+        rl.question("Enter the student id ",(std_id)=>{
+            let id=Number(std_id);
+            if(!students[id]){
+                console.log(`student with ${id} not found!!`);
+                return showMenu();
+            }
+            const student=students[id];
+            rl.question(`Are you sure to delete ${student.name} (${student.id}) :(yes/no)`,(answer)=>{
+                if(answer.toLowerCase()==="yes" || answer.toLowerCase()==="y"){
+                    delete students[id];
+                    console.log(`🗑️ Student ${student.name} deleted successfully!`);
+                }else{
+                    console.log("deletion canceled!!");
+                }
+                return showMenu();
+            })
+        })
+    }
 }
