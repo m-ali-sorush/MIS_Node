@@ -79,9 +79,8 @@ function viewStudents(){
             const student=students[id];
             console.log(`${count}. ID: ${student.id}, Name: ${student.name}, Score:${student.mark}`);
             count++;
-            sum++;
+            sum
         }
-        console.log(`======= Total Student: ${sum} ==== `);
         console.log("______________________________________");       
         showMenu();
     }
