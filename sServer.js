@@ -23,10 +23,11 @@ http.createServer(function(req,res){
     req.on('data',dataParts=>{
         console.log("we received data from other server request");
         console.log(dataParts);
-    })
+        postData+=dataParts
+    });
     req.on('end',()=>{
-        console.log(JSON.parse(postData));
-    })
+        console.log("Main data from request : ",JSON.parse(postData));
+    });
     fs.readFile(__dirname+urlParts[0], function(err,data){
         if(err){
             console.log("not found");

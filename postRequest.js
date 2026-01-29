@@ -6,7 +6,8 @@ const options={
     method:'POST'
 }
 const requestData={
-    name:"ali"
+    name:"Ali",
+    last:"Khurami"
 }
 const req=http.request(options,res=>{
     console.log(`statusCode : ${res.statusCode}`);
