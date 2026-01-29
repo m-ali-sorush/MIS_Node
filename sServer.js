@@ -13,13 +13,21 @@ var mimeTypes={
 
 http.createServer(function(req,res){
     console.log("listen on port 8080");
-    fs.readFile(__dirname+req.url, function(err,data){
+    console.log(req.url);
+    let urlParts=req.url.split("?");
+    if(urlParts[1]){
+        console.log("there is data from query params");
+        console.log(urlParts[1]);
+       
+    }
+    fs.readFile(__dirname+urlParts[0], function(err,data){
         if(err){
+            console.log("not found");
             res.writeHead(404);
             res.end(JSON.stringify(err));
             return;
         }
-        var mimeType=mimeTypes[req.url.split('.').pop()];
+        var mimeType=mimeTypes[urlParts[0].split('.').pop()];
         if(!mimeType){
             mimeType='text/plain'
         }

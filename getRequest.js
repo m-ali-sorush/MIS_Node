@@ -2,7 +2,7 @@ const http=require('http');
 const options={
     hostname:'localhost',
     port:8080,
-    path:'/api.json',
+    path:'/api.json?name=ali',
     method:'GET'
 }
 
