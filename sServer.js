@@ -17,9 +17,16 @@ http.createServer(function(req,res){
     let urlParts=req.url.split("?");
     if(urlParts[1]){
         console.log("there is data from query params");
-        console.log(urlParts[1]);
-       
+        console.log(urlParts[1]); 
     }
+    let postData='';
+    req.on('data',dataParts=>{
+        console.log("we received data from other server request");
+        console.log(dataParts);
+    })
+    req.on('end',()=>{
+        console.log(JSON.parse(postData));
+    })
     fs.readFile(__dirname+urlParts[0], function(err,data){
         if(err){
             console.log("not found");
