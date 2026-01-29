@@ -74,17 +74,14 @@ function viewStudents(){
         console.log("______________________________________");
         console.log("====== Students List =====");
         let count=1;
-        let sum=0;
         for (const id in students){
             const student=students[id];
             console.log(`${count}. ID: ${student.id}, Name: ${student.name}, Score:${student.mark}`);
             count++;
-            sum++;
         }
-        console.log(`======= Total Student: ${sum} ==== `);
         console.log("______________________________________");       
-        showMenu();
     }
+    showMenu();
 }
 function deleteStudent(){
     if(Object.keys(students).length===0){

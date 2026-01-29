@@ -81,7 +81,6 @@ function viewStudents(){
             count++;
             sum++;
         }
-        console.log(`======= Total Student: ${sum} ==== `);
         console.log("______________________________________");       
         showMenu();
     }
