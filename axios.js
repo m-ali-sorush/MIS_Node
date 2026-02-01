@@ -1,20 +1,21 @@
 const axios=require('axios');
 
 
-// axios.get("https://jsonplaceholder.typicode.com/users")
-// .then(res=>{
-//     let id=1;
-//     res.data.forEach(user=>{
-//         console.log("  Name   , street   , city");
-//         console.log(`${user.name} → ${user.address.street}, ${user.address.city}`);
-//         id++;
+axios.get("https://jsonplaceholder.typicode.com/users")
+.then(res=>{
+    let id=1;
+    res.data.forEach(user=>{
+        console.log("  Name   , street   , city");
+        console.log(`${user.name} → ${user.address.street}, ${user.address.city}`);
+        console.log("User Latitude Address : "+user.address.geo.lat);
+        id++;
         
-//     })
+    })
    
-//     // console.log(res.data);
-// }).catch(err=>{
-//     console.log(err.message);
-// })
+    // console.log(res.data);
+}).catch(err=>{
+    console.log(err.message);
+})
 
 
 async function createUser() {
@@ -34,4 +35,4 @@ async function createUser() {
   }
 }
 
-createUser();
+// createUser();
