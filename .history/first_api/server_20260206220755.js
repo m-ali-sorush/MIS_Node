@@ -3,7 +3,7 @@ const http=require('http');
 const path=require('path');
 const mimeTypes=require('mime-types');
 const queryStringHandler=require('qs');
-const { configs } = require('./configs').configs;
+const { configS } = require('yargs');
 const route = require('color-convert/route');
 const controllers=require('./controllers/ControllerLoadder').controllers;
 
@@ -12,7 +12,7 @@ const controllers=require('./controllers/ControllerLoadder').controllers;
 const server=http.createServer((req,res)=>{
     console.log(req.url);
     console.log("Listen on port 8080")
-    req.parsedURL=new URL(path.join(configs.hostname, req.url));
+    req.parsedURL=new URL(path.join(configS.hostname, req.url));
     let data = getRequestData(req);
     if (req.parsedURL.pathname.search('/api')>=0){
         route=getAPIControllerMethodName(req);

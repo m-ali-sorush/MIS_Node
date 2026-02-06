@@ -3,7 +3,7 @@ const http=require('http');
 const path=require('path');
 const mimeTypes=require('mime-types');
 const queryStringHandler=require('qs');
-const { configs } = require('./configs').configs;
+const { configs } = require('./');
 const route = require('color-convert/route');
 const controllers=require('./controllers/ControllerLoadder').controllers;
 
