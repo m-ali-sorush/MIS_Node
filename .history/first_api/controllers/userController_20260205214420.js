@@ -8,4 +8,3 @@ class user{
         console.log("Say Hi function called");
     }
 }
-module.exports=user;

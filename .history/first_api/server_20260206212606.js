@@ -13,5 +13,6 @@ const server=http.createServer((req,res)=>{
     console.log("Listen on port 8080")
     req.parsedUrl=new URL(path.join(config.hostname,req.url ));
     let data = getRequestData(req);
+    console.log(data);
 
 }).listen(8080);

@@ -1,11 +1,10 @@
 class user{
     index(){
         return {
-            name:"Ali "
+            console.log();
         }
     }
     sayHi(){
         console.log("Say Hi function called");
     }
 }
-module.exports=user;
